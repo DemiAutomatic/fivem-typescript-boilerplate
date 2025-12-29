@@ -2,6 +2,8 @@
 
 A boilerplate for creating FiveM resources with TypeScript.
 
+This branch includes SQLite database support.
+
 ## Getting Started
 
 ### Node.js v18+

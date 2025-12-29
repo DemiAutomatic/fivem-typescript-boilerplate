@@ -1,37 +1,37 @@
 {
-	"name": "fivem-typescript-boilerplate",
-	"author": "Overextended",
-	"version": "0.0.0",
-	"license": "",
-	"description": "",
-	"type": "module",
-	"scripts": {
-		"build": "node scripts/build.js",
-		"watch": "node scripts/build.js --watch",
-		"format": "pnpm biome format --write",
-		"lint": "pnpm biome lint --write"
-	},
-	"keywords": [
-		"fivem"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/DemiAutomatic/fivem-typescript-boilerplate.git"
-	},
-	"bugs": "https://github.com/DemiAutomatic/fivem-typescript-boilerplate/issues",
-	"devDependencies": {
-		"@citizenfx/client": "latest",
-		"@citizenfx/server": "latest",
-		"@jgoz/esbuild-plugin-typecheck": "^4.0.3",
-		"@communityox/fx-utils": "^0.0.4",
-		"@types/node": "^22.13.9",
-		"esbuild": "^0.25.0",
-		"typescript": "^5.8.2"
-	},
-	"dependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@nativewrappers/fivem": "latest",
-		"@communityox/ox_lib": "latest",
-		"@communityox/oxmysql": "latest"
-	}
+  "name": "fivem-typescript-boilerplate",
+  "author": "Overextended",
+  "version": "0.0.0",
+  "license": "",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "watch": "node scripts/build.js --watch",
+    "format": "bun biome format --write",
+    "lint": "bun biome lint --write"
+  },
+  "keywords": [
+    "fivem"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DemiAutomatic/fivem-typescript-boilerplate.git"
+  },
+  "bugs": "https://github.com/DemiAutomatic/fivem-typescript-boilerplate/issues",
+  "devDependencies": {
+    "@citizenfx/client": "latest",
+    "@citizenfx/server": "latest",
+    "@jgoz/esbuild-plugin-typecheck": "^4.0.3",
+    "@communityox/fx-utils": "^0.0.4",
+    "@types/node": "^22.13.9",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@nativewrappers/fivem": "latest",
+    "@communityox/ox_lib": "latest",
+    "@communityox/oxmysql": "latest"
+  }
 }
