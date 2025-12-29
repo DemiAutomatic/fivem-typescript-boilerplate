@@ -2,18 +2,20 @@
 
 A boilerplate for creating FiveM resources with TypeScript.
 
+This branch includes NUI (web UI) and SQLite database support.
+
 ## Getting Started
 
 ### Node.js v18+
 
 Install any LTS release of [`Node.js`](https://nodejs.org/) from v18.
 
-### pnpm
+### bun
 
-Install the [`pnpm`](https://pnpm.io/installation) package manager globally.
+Install the [`bun`](https://bun.com/docs/installation#package-managers) package manager globally.
 
 ```
-npm install -g pnpm
+npm install -g bun
 ```
 
 ### Setup
@@ -28,18 +30,18 @@ Initialise your own repository by using one of the options below.
 Navigate to your new directory and execute the following command to install dependencies.
 
 ```
-pnpm install
+bun install
 ```
 
 ## Development
 
-Use `pnpm watch` to actively rebuild modified files while developing the resource.
+Use `bun run watch` to actively rebuild modified files while developing the resource.
 
-During web development, use `pnpm web:dev` to start vite's webserver and watch for changes.
+During web development, use `bun run web:dev` to start vite's webserver and watch for changes.
 
 ## Build
 
-Use `pnpm build` to build all project files in production mode.
+Use `bun run build` to build all project files in production mode.
 
 To build and create GitHub releases, tag your commit (e.g. `v1.0.0`) and push it.
 
