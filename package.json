@@ -9,8 +9,8 @@
     "web:dev": "cd web && vite dev",
     "build": "node scripts/build.js",
     "watch": "node scripts/build.js --watch",
-    "format": "bun biome format --write",
-    "lint": "bun biome lint --write"
+    "format": "pnpm biome format --write",
+    "lint": "pnpm biome lint --write"
   },
   "keywords": [
     "fivem"
