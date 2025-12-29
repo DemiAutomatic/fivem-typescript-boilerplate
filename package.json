@@ -8,8 +8,8 @@
   "scripts": {
     "build": "node scripts/build.js",
     "watch": "node scripts/build.js --watch",
-    "format": "pnpm biome format --write",
-    "lint": "pnpm biome lint --write"
+    "format": "bun biome format --write",
+    "lint": "bun biome lint --write"
   },
   "keywords": [
     "fivem"

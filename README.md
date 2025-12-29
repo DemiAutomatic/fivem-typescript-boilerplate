@@ -2,6 +2,8 @@
 
 A boilerplate for creating FiveM resources with TypeScript.
 
+This branch is the base resource without NUI or SQLite.
+
 ## Getting Started
 
 ### Node.js v18+
