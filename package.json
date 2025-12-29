@@ -37,6 +37,7 @@
 		"@biomejs/biome": "^1.9.4",
 		"@nativewrappers/fivem": "latest",
 		"@communityox/ox_lib": "latest",
+		"@communityox/oxmysql": "latest",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"
 	}
