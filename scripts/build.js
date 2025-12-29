@@ -43,7 +43,7 @@ createBuilder(
       client_scripts: [outfiles.client],
       server_scripts: [outfiles.server],
       files: ["lib/init.lua", "lib/client/**.lua", "locales/*.json", ...files],
-      dependencies: ["/server:13068", "/onesync", "oxmysql", "ox_lib"],
+      dependencies: ["/server:13068", "/onesync", "ox_lib"],
       metadata: {
         lua54: "yes",
         node_version: "22",
