@@ -7,7 +7,6 @@
       "dependencies": {
         "@biomejs/biome": "^1.9.4",
         "@communityox/ox_lib": "latest",
-        "@communityox/oxmysql": "latest",
         "@nativewrappers/fivem": "latest",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
@@ -91,8 +90,6 @@
     "@communityox/fx-utils": ["@communityox/fx-utils@0.0.4", "", { "dependencies": { "esbuild": "^0.23.1", "tsc-alias": "^1.8.10" }, "bin": { "fxdoc": "dist/bin/fxdoc.js" } }, "sha512-/IAlSwykgwt1BPwk0+7bvSvTGDQDiduss/BWqeWdnOz3Bim9sSrNzJoEI0CE8UMyjjs4UTth7xQdYYT2WGgvcA=="],
 
     "@communityox/ox_lib": ["@communityox/ox_lib@3.32.1", "", { "dependencies": { "@nativewrappers/fivem": "^0.0.103", "csstype": "^3.1.3", "fast-printf": "^1.6.9", "typescript": "^5.4.2" } }, "sha512-WH8LXA0HLS4IuUzhfTyFQptJ5/lHHN/Xm0xAJ/guGGxd0q8JC8pDr7t5yD84ZOzKczOqMKsDkvEZmHvqUA0gGA=="],
-
-    "@communityox/oxmysql": ["@communityox/oxmysql@1.4.3", "", {}, "sha512-PWaG9JKpJea/n6QocAyZR/q5ZGiBM+tzxo3gXp5tg8pDqFqkS/s7eBkS0W02lZbw/FrhcIhEDztoUI9rHXxMdQ=="],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.12", "", { "os": "aix", "cpu": "ppc64" }, "sha512-Hhmwd6CInZ3dwpuGTF8fJG6yoWmsToE+vYgD4nytZVxcu1ulHpUQRAB1UJ8+N1Am3Mz4+xOByoQoSZf4D+CpkA=="],
 
