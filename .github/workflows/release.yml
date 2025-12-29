@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
   create-release:
@@ -20,10 +20,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.repository.default_branch }}
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4.0.0
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          version: 9
+          bun-version: latest
+          cache: true
 
       - name: Get variables
         id: get_vars
@@ -35,20 +36,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
-          cache-dependency-path: 'pnpm-lock.yaml'
 
       - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Bump package version
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          pnpm version ${{ github.ref_name }} --git-tag-version false
+          npm version ${{ github.ref_name }} --git-tag-version false
 
       - name: Run build
-        run: pnpm build
+        run: bun run build
 
       - name: Update repository
         run: |
@@ -58,14 +57,14 @@ jobs:
 
       - name: Bundle files
         run: |
-          zip -r ${{ github.event.repository.name }}.zip . -x "./.*" "./node_modules/*" "./scripts/*" "./src/*" "./web/*" "./tsconfig.json" "./pnpm-lock.yaml" "./package.json" "./eslint.config.js"
+          zip -r ${{ github.event.repository.name }}.zip . -x "./.*" "./node_modules/*" "./scripts/*" "./src/*" "./tsconfig.json" "./bun.lockb" "./package.json" "./eslint.config.js"
 
       - name: Create Release
-        uses: 'marvinpinto/action-automatic-releases@v1.2.1'
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
         id: auto_release
         with:
-          repo_token: '${{ secrets.GITHUB_TOKEN }}'
-          title: '${{ env.RELEASE_VERSION }}'
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          title: "${{ env.RELEASE_VERSION }}"
           prerelease: false
           files: ${{ github.event.repository.name }}.zip
 

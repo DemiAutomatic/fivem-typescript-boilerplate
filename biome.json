@@ -1,6 +1,6 @@
 {
   "files": {
-    "include": ["./src/**/*.ts", "./web/**/*.ts", "./web/**/*.tsx"],
+    "include": ["./src/**/*.ts"],
     "ignore": ["**/*.d.ts"]
   },
   "linter": {
