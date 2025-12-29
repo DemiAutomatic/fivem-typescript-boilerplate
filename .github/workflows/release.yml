@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
   create-release:
@@ -54,14 +54,14 @@ jobs:
 
       - name: Bundle files
         run: |
-          zip -r ${{ github.event.repository.name }}.zip . -x "./.*" "./node_modules/*" "./scripts/*" "./src/*" "./tsconfig.json" "./bun.lockb" "./package.json" "./eslint.config.js"
+          zip -r ${{ github.event.repository.name }}.zip . -x "./.*" "./node_modules/*" "./scripts/*" "./src/*" "./web/*" "./tsconfig.json" "./bun.lockb" "./package.json" "./eslint.config.js"
 
       - name: Create Release
-        uses: 'marvinpinto/action-automatic-releases@v1.2.1'
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
         id: auto_release
         with:
-          repo_token: '${{ secrets.GITHUB_TOKEN }}'
-          title: '${{ env.RELEASE_VERSION }}'
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          title: "${{ env.RELEASE_VERSION }}"
           prerelease: false
           files: ${{ github.event.repository.name }}.zip
 
