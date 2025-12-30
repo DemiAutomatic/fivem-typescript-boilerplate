@@ -20,12 +20,9 @@ npm install -g bun
 
 ### Setup
 
-Initialise your own repository by using one of the options below.
+Initialise your own repository.
 
-- [Create a new repository](https://github.com/new?template_name=fivem-typescript-boilerplate&template_owner=DemiAutomatic) using this template.
 - [Download](https://github.com/DemiAutomatic/fivem-typescript-boilerplate/archive/refs/heads/lean.zip) the template directly.
-- Use the [GitHub CLI](https://cli.github.com/).
-  - `gh repo create <name> --template=DemiAutomatic/fivem-typescript-boilerplate`
 
 Navigate to your new directory and execute the following command to install dependencies.
 
