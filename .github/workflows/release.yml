@@ -15,24 +15,24 @@ jobs:
         run: sudo apt install zip
 
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Get variables
         id: get_vars
         run: |
-          echo '::set-output name=SHORT_SHA::$(git rev-parse --short HEAD)'
-          echo '::set-output name=DATE::$(date +'%D')'
+          echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "DATE=$(date +'%D')" >> $GITHUB_OUTPUT
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
@@ -54,17 +54,12 @@ jobs:
 
       - name: Bundle files
         run: |
-          zip -r ${{ github.event.repository.name }}.zip . -x "./.*" "./node_modules/*" "./scripts/*" "./src/*" "./web/*" "./tsconfig.json" "./bun.lockb" "./package.json" "./eslint.config.js"
+          zip -r ${{ github.event.repository.name }}.zip . -x "./.*" "./node_modules/*" "./scripts/*" "./src/*" "./web/*" "./tsconfig.json" "./bun.lock" "./package.json" "./biome.json"
 
       - name: Create Release
-        uses: "marvinpinto/action-automatic-releases@v1.2.1"
-        id: auto_release
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          title: "${{ env.RELEASE_VERSION }}"
-          prerelease: false
           files: ${{ github.event.repository.name }}.zip
-
+          generate_release_notes: true
         env:
-          CI: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

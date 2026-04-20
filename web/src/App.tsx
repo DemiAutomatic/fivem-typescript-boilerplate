@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { isEnvBrowser } from './utils/misc';
 import { useNuiEvent } from './hooks/useNuiEvent';
 import { fetchNui } from './utils/fetchNui';
+import { isEnvBrowser } from './utils/misc';
 
 function App() {
   const [visible, setVisible] = useState(isEnvBrowser());

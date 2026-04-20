@@ -12,7 +12,7 @@ Install any LTS release of [`Node.js`](https://nodejs.org/) from v18.
 
 ### bun
 
-Install the [`bun`](https://bun.com/docs/installation#package-managers) package manager globally.
+Install the [`bun`](https://bun.sh/docs/installation) package manager globally.
 
 ```
 npm install -g bun

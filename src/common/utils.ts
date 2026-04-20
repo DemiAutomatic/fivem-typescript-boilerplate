@@ -1,4 +1,4 @@
-import { ResourceName, IsBrowser } from './resource';
+import { IsBrowser, ResourceName } from './resource';
 
 export function LoadFile(path: string) {
   return LoadResourceFile(ResourceName, path);
