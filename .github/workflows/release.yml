@@ -39,7 +39,15 @@ jobs:
 
       - name: Bundle release files
         run: |
-          zip -r ${{ github.event.repository.name }}.zip .             -x "./.*"             -x "./node_modules/*"             -x "./scripts/*"             -x "./src/*"             -x "./tsconfig.json"             -x "./bun.lock"             -x "./package.json"             -x "./biome.json"
+          zip -r ${{ github.event.repository.name }}.zip . \
+            -x "./.*" \
+            -x "./node_modules/*" \
+            -x "./scripts/*" \
+            -x "./src/*" \
+            -x "./tsconfig.json" \
+            -x "./bun.lock" \
+            -x "./package.json" \
+            -x "./biome.json"
 
       - name: Create release
         uses: softprops/action-gh-release@v2
