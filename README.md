@@ -4,6 +4,19 @@ A boilerplate for creating FiveM resources with TypeScript.
 
 This branch is the base resource without NUI or SQLite.
 
+## Branches
+
+This repository provides multiple template branches depending on the features you want included from the start.
+
+| Branch | NUI | SQLite | Description |
+|---|---:|---:|---|
+| `lean` | No | No | Minimal resource template with no UI or database layer. |
+| `nui` | Yes | No | Resource template with a web UI, but no database layer. |
+| `sqlite` | No | Yes | Resource template with SQLite support, but no web UI. |
+| `nui-sqlite` | Yes | Yes | Resource template with both a web UI and SQLite support. |
+
+If you want the most feature-complete starting point, use `nui-sqlite`.
+
 ## Getting Started
 
 ### Node.js v18+
@@ -12,7 +25,7 @@ Install any LTS release of [`Node.js`](https://nodejs.org/) from v18.
 
 ### bun
 
-Install the [`bun`](https://bun.com/docs/installation#package-managers) package manager globally.
+Install the [`bun`](https://bun.sh/docs/installation) package manager globally.
 
 ```
 npm install -g bun
@@ -20,7 +33,7 @@ npm install -g bun
 
 ### Setup
 
-Initialise your own repository.
+Download this branch directly to start from the lean template variant.
 
 - [Download](https://github.com/DemiAutomatic/fivem-typescript-boilerplate/archive/refs/heads/lean.zip) the template directly.
 
