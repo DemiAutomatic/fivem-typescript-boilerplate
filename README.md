@@ -41,7 +41,11 @@ Use `bun run watch` to actively rebuild modified files while developing the reso
 
 Use `bun run build` to build all project files in production mode.
 
-To build and create GitHub releases, tag your commit (e.g. `v1.0.0`) and push it.
+## Releases
+
+This template repository is intended to be distributed as source only.
+
+The included GitHub release workflow exists for repositories created from this template. In a generated resource repository, tag your commit (for example `v1.0.0`) and push the tag to build the resource and create a release archive.
 
 ## Layout
 
