@@ -5,15 +5,15 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  contents: write
+
 jobs:
   create-release:
-    name: Build and Create Tagged release
+    name: Build and create tagged release
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install archive tools
-        run: sudo apt install zip
-
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
@@ -28,35 +28,29 @@ jobs:
         with:
           node-version: 22
 
-      - name: Get variables
-        id: get_vars
-        run: |
-          echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          echo "DATE=$(date +'%D')" >> $GITHUB_OUTPUT
-
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Bump package version
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          npm version ${{ github.ref_name }} --git-tag-version false
+      - name: Bump package version for build artifacts
+        run: npm version ${{ github.ref_name }} --git-tag-version false
 
       - name: Run build
         run: bun run build
 
-      - name: Update repository
+      - name: Bundle release files
         run: |
-          git add .
-          git commit -am '${{ github.ref_name }}'
-          git push
+          zip -r ${{ github.event.repository.name }}.zip . \
+            -x "./.*" \
+            -x "./node_modules/*" \
+            -x "./scripts/*" \
+            -x "./src/*" \
+            -x "./web/*" \
+            -x "./tsconfig.json" \
+            -x "./bun.lock" \
+            -x "./package.json" \
+            -x "./biome.json"
 
-      - name: Bundle files
-        run: |
-          zip -r ${{ github.event.repository.name }}.zip . -x "./.*" "./node_modules/*" "./scripts/*" "./src/*" "./web/*" "./tsconfig.json" "./bun.lock" "./package.json" "./biome.json"
-
-      - name: Create Release
+      - name: Create release
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ github.event.repository.name }}.zip

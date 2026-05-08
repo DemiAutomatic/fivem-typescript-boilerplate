@@ -43,7 +43,11 @@ During web development, use `bun run web:dev` to start vite's webserver and watc
 
 Use `bun run build` to build all project files in production mode.
 
-To build and create GitHub releases, tag your commit (e.g. `v1.0.0`) and push it.
+## Releases
+
+This template repository is intended to be distributed as source only.
+
+The included GitHub release workflow exists for repositories created from this template. In a generated resource repository, tag your commit (for example `v1.0.0`) and push the tag to build the resource and create a release archive.
 
 ## Layout
 
