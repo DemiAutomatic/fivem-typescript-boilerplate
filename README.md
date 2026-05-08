@@ -2,7 +2,20 @@
 
 A boilerplate for creating FiveM resources with TypeScript.
 
-This branch includes NUI (web UI) and SQLite database support.
+This branch includes both NUI (web UI) and SQLite database support.
+
+## Branches
+
+This repository provides multiple template branches depending on the features you want included from the start.
+
+| Branch | NUI | SQLite | Description |
+|---|---:|---:|---|
+| `lean` | No | No | Minimal resource template with no UI or database layer. |
+| `nui` | Yes | No | Resource template with a web UI, but no database layer. |
+| `sqlite` | No | Yes | Resource template with SQLite support, but no web UI. |
+| `nui-sqlite` | Yes | Yes | Resource template with both a web UI and SQLite support. |
+
+If you want the most feature-complete starting point, use `nui-sqlite`.
 
 ## Getting Started
 
@@ -23,7 +36,7 @@ npm install -g bun
 Initialise your own repository by using one of the options below.
 
 - [Create a new repository](https://github.com/new?template_name=fivem-typescript-boilerplate&template_owner=DemiAutomatic) using this template.
-- [Download](https://github.com/DemiAutomatic/fivem-typescript-boilerplate/archive/refs/heads/main.zip) the template directly.
+- [Download](https://github.com/DemiAutomatic/fivem-typescript-boilerplate/archive/refs/heads/nui-sqlite.zip) the template directly.
 - Use the [GitHub CLI](https://cli.github.com/).
   - `gh repo create <name> --template=DemiAutomatic/fivem-typescript-boilerplate`
 
