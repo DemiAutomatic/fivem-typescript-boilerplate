@@ -2,7 +2,20 @@
 
 A boilerplate for creating FiveM resources with TypeScript.
 
-This branch includes SQLite database support.
+This branch includes SQLite database support, but does not include NUI.
+
+## Branches
+
+This repository provides multiple template branches depending on the features you want included from the start.
+
+| Branch | NUI | SQLite | Description |
+|---|---:|---:|---|
+| `lean` | No | No | Minimal resource template with no UI or database layer. |
+| `nui` | Yes | No | Resource template with a web UI, but no database layer. |
+| `sqlite` | No | Yes | Resource template with SQLite support, but no web UI. |
+| `nui-sqlite` | Yes | Yes | Resource template with both a web UI and SQLite support. |
+
+If you want the most feature-complete starting point, use `nui-sqlite`.
 
 ## Getting Started
 
@@ -12,7 +25,7 @@ Install any LTS release of [`Node.js`](https://nodejs.org/) from v18.
 
 ### bun
 
-Install the [`bun`](https://bun.com/docs/installation#package-managers) package manager globally.
+Install the [`bun`](https://bun.sh/docs/installation) package manager globally.
 
 ```
 npm install -g bun
@@ -20,12 +33,9 @@ npm install -g bun
 
 ### Setup
 
-Initialise your own repository by using one of the options below.
+Download this branch directly to start from the SQLite template variant.
 
-- [Create a new repository](https://github.com/new?template_name=fivem-typescript-boilerplate&template_owner=DemiAutomatic) using this template.
 - [Download](https://github.com/DemiAutomatic/fivem-typescript-boilerplate/archive/refs/heads/sqlite.zip) the template directly.
-- Use the [GitHub CLI](https://cli.github.com/).
-  - `gh repo create <name> --template=DemiAutomatic/fivem-typescript-boilerplate`
 
 Navigate to your new directory and execute the following command to install dependencies.
 
